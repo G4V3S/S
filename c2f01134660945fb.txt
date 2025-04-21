@@ -1,0 +1,199 @@
+-- discord.gg/25ms
+
+
+local v8 = game.Players.LocalPlayer;
+local v9 = Instance.new('ScreenGui', v8:WaitForChild('PlayerGui'));
+v9.Name = 'DeadRailsLoader';
+v9.ResetOnSpawn = false;
+local v12 = Instance.new('Frame', v9);
+v12.Size = UDim2.new(0, 350, 0, 320);
+v12.Position = UDim2.new(0.5, - 175, 0.5, - 160);
+v12.BackgroundColor3 = Color3.fromRGB(35, 35, 35);
+v12.BorderSizePixel = 0;
+v12.AnchorPoint = Vector2.new(0.5, 0.5);
+v12.Active = true;
+v12.Draggable = true;
+local v20 = Instance.new('UIGradient', v12);
+v20.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(30, 30, 60)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(50, 80, 90))
+});
+v20.Rotation = 45;
+local v23 = Instance.new('UICorner', v12);
+v23.CornerRadius = UDim.new(0, 12);
+local v25 = Instance.new('UIStroke', v12);
+v25.Thickness = 2;
+v25.Color = Color3.fromRGB(0, 0, 0);
+v25.ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+local v30 = Instance.new('TextLabel', v12);
+v30.Size = UDim2.new(1, 0, 0, 40);
+v30.BackgroundTransparency = 1;
+v30.Text = 'dead rails';
+v30.Font = Enum.Font.GothamBlack;
+v30.TextColor3 = Color3.fromRGB(255, 255, 255);
+v30.TextSize = 26;
+local v38 = Instance.new('TextButton', v12);
+v38.Position = UDim2.new(0, 10, 0, 45);
+v38.Size = UDim2.new(0, 150, 0, 30);
+v38.BackgroundColor3 = Color3.fromRGB(60, 60, 90);
+v38.Text = 'Teleports';
+v38.Font = Enum.Font.GothamMedium;
+v38.TextColor3 = Color3.fromRGB(255, 255, 255);
+v38.TextSize = 18;
+local v47 = Instance.new('TextButton', v12);
+v47.Position = UDim2.new(0, 190, 0, 45);
+v47.Size = UDim2.new(0, 150, 0, 30);
+v47.BackgroundColor3 = Color3.fromRGB(90, 60, 60);
+v47.Text = 'tp to end & tools';
+v47.Font = Enum.Font.GothamMedium;
+v47.TextColor3 = Color3.fromRGB(255, 255, 255);
+v47.TextSize = 18;
+local v55 = Instance.new('Frame', v12);
+v55.Position = UDim2.new(0, 0, 0, 80);
+v55.Size = UDim2.new(1, 0, 1, - 120);
+v55.BackgroundTransparency = 1;
+local v59 = v55:Clone();
+v59.Parent = v12;
+v59.Visible = false;
+local v62 = Instance.new('Sound', v9);
+v62.SoundId = 'rbxassetid://6026984224';
+v62.Volume = 1;
+local function v65(v110, v111, v112, v113, v114)
+    local v115 = 0;
+    local v116;
+    local v117;
+    while true do
+        if (v115 == (1)) then
+            v116.Text = v111;
+            v116.Font = Enum.Font.GothamSemibold;
+            v116.TextColor3 = Color3.fromRGB(255, 255, 255);
+            v116.TextSize = 18;
+            v115 = 2;
+        end
+        if (v115 == (2)) then
+            v117 = Instance.new('UICorner', v116);
+            v117.CornerRadius = UDim.new(0, 8);
+            v116.MouseButton1Click:Connect(function()
+                local v141 = 0;
+                while true do
+                    if (v141 == 0) then
+                        v62:Play();
+                        loadstring(game:HttpGet(v114))();
+                        break
+                    end
+                end
+            end);
+            break
+        end
+        if (v115 == (0)) then
+            v116 = Instance.new('TextButton', v110);
+            v116.Position = UDim2.new(0.5, - 100, 0, v113);
+            v116.Size = UDim2.new(0, 200, 0, 35);
+            v116.BackgroundColor3 = v112;
+            v115 = 1;
+        end
+    end
+end
+v65(v55, 'Fort Constitution', Color3.fromRGB(60, 60, 90), 5, 'https://raw.githubusercontent.com/ringtaa/Tpfort.github.io/refs/heads/main/Tpfort.lua');
+v65(v55, 'Vampire Castle', Color3.fromRGB(90, 60, 60), 50, 'https://raw.githubusercontent.com/ringtaa/castletpfast.github.io/refs/heads/main/FASTCASTLE.lua');
+v65(v55, 'Tesla Lab', Color3.fromRGB(70, 70, 100), 95, 'https://raw.githubusercontent.com/ringtaa/tptotesla.github.io/refs/heads/main/Tptotesla.lua');
+v65(v59, 'tp to end by saned', Color3.fromRGB(100, 80, 60), 5, 'https://raw.githubusercontent.com/TwoGunVolley/Earlyfixed/refs/heads/main/Protected_1408189441085576.txt');
+v65(v59, 'tp to end by tora', Color3.fromRGB(60, 90, 90), 50, 'https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/DeadRails');
+v38.MouseButton1Click:Connect(function()
+    v55.Visible = true;
+    v59.Visible = false;
+end);
+v47.MouseButton1Click:Connect(function()
+    local v120 = 0;
+    while true do
+        if (v120 == 0) then
+            v55.Visible = false;
+            v59.Visible = true;
+            break
+        end
+    end
+end);
+local v66 = Instance.new('TextButton', v12);
+v66.Position = UDim2.new(0.5, - 60, 1, - 50);
+v66.Size = UDim2.new(0, 120, 0, 35);
+v66.BackgroundColor3 = Color3.fromRGB(40, 40, 40);
+v66.Text = 'Minimize';
+v66.Font = Enum.Font.GothamMedium;
+v66.TextColor3 = Color3.fromRGB(255, 255, 255);
+v66.TextSize = 18;
+v66.Visible = false;
+Instance.new('UICorner', v66).CornerRadius = UDim.new(0, 8);
+local v76 = Instance.new('TextLabel', v12);
+v76.Position = UDim2.new(0, 0, 1, - 20);
+v76.Size = UDim2.new(1, 0, 0, 20);
+v76.BackgroundTransparency = 1;
+v76.Text = "— created by Moondiety —";
+v76.Font = Enum.Font.GothamBold;
+v76.TextColor3 = Color3.fromRGB(255, 160, 255);
+v76.TextStrokeTransparency = 0;
+v76.TextStrokeColor3 = Color3.fromRGB(60, 0, 90);
+v76.TextSize = 16;
+local v87 = Instance.new('TextButton', v9);
+v87.Size = UDim2.new(0, 60, 0, 60);
+v87.Position = UDim2.new(0, 10, 0, 10);
+v87.BackgroundColor3 = Color3.fromRGB(50, 50, 50);
+v87.Text = 'MOON';
+v87.Font = Enum.Font.GothamBlack;
+v87.TextColor3 = Color3.fromRGB(255, 255, 255);
+v87.TextSize = 22;
+v87.Visible = false;
+Instance.new('UICorner', v87).CornerRadius = UDim.new(1, 0);
+local v97 = Instance.new('TextLabel', v9);
+v97.Position = UDim2.new(0, 10, 0, 75);
+v97.Size = UDim2.new(0, 60, 0, 20);
+v97.BackgroundTransparency = 1;
+v97.TextColor3 = Color3.fromRGB(255, 255, 255);
+v97.Font = Enum.Font.Gotham;
+v97.TextSize = 25;
+v97.Text = '10:00';
+local v106 = 600;
+task.spawn(function()
+    local v121 = 0;
+    local v122;
+    while true do
+        if (v121 == (0)) then
+            v122 = 0;
+            while true do
+                if (v122 == (0)) then
+                    while v106 > 0 do
+                        v106 -= (1)
+                        local v143 = math.floor(v106 / (60));
+                        local v144 = v106 % (60) ;
+                        v97.Text = string.format('%02d:%02d', v143, v144);
+                        wait(1);
+                    end
+                    v97.Text = '00:00';
+                    break
+                end
+            end
+            break
+        end
+    end
+end);
+task.delay(3, function()
+    v66.Visible = true;
+end);
+v66.MouseButton1Click:Connect(function()
+    v12.Visible = false;
+    v87.Visible = true;
+    v62:Play();
+end);
+v87.MouseButton1Click:Connect(function()
+    local v126 = 0;
+    while true do
+        if (v126 == (0)) then
+            v12.Visible = true;
+            v87.Visible = false;
+            v126 = 1;
+        end
+        if (v126 == (1)) then
+            v62:Play();
+            break
+        end
+    end
+end);
